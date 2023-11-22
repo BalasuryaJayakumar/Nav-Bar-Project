@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Fugaz+One&family=Nunito&family=Nunito+Sans:ital,opsz,wght@0,6..12,400;1,6..12,300&display=swap');
+
+/* ||RESETS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --COLOR: #000;
+    --BGCOLOR: whitesmoke;
+    --BORDER-COLOR: #333;
+    --HEADER-COLOR: rgb(71, 151, 183);
+    --BODY-BGCOLOR: rgb(186, 210, 220);
+}
+
+@media (prefers-color-scheme:dark) {
+    :root {
+        --COLOR: #000;
+        --BGCOLOR: rgb(111, 111, 164);
+        --BORDER-COLOR: #000;
+        --HEADER-COLOR: maroon;
+        --BODY-BGCOLOR: rgb(71, 71, 100);
+    }
+}
+
+.button {
+    font: inherit;
+}
+
+html {
+    font-size: clamp(1rem, 2.7vh, 1.5rem);
+    font-family: 'Nunito', sans-serif;
+    min-height: 100vh;
+    width: 100vw;
+    background-color: var(--BODY-BGCOLOR);
+    color: var(--COLOR);
+}
+
+body {
+    border-bottom: 1px solid var(--BGCOLOR);
+    box-shadow: 2px 2px 8px var(--BORDER-COLOR);
+    background-color: var(--BGCOLOR);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5em 1em;
+    gap: 2rem;
+    text-shadow: 1px 1px 3px var(--BORDER-COLOR);
+    letter-spacing: 0.15em;
+    transition: all 0.5s;
+    background-color: var(--BGCOLOR);
+}
+
+.header_h1 .blue {
+    color: var(--HEADER-COLOR);
+}
+
+.header_btn {
+    width: 30px;
+    height: 40px;
+    background-color: transparent;
+    border-radius: 5px;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.rotate {
+    transform: rotate(90deg);
+}
+
+.btn_line, .btn_line::before, .btn_line::after {
+    width: 20px;
+    height: 5px;
+    background-color: var(--HEADER-COLOR);
+    border-radius: 5px;
+    position: absolute;
+}
+
+.btn_line::before, .btn_line::after {
+    content: "";
+}
+
+.btn_line::before {
+    transform: translate(-10px, 10PX);
+}
+
+.btn_line::after {
+    transform: translate(-10px, -10PX);
+}
+
+.header_btn:hover, .header_btn:focus-visible {
+    box-shadow: 2px 2px 6px var(--BORDER-COLOR);
+}
+
+.header_btn:active {
+    background-color: var(--BORDER-COLOR);
+}
+
+.main {
+    display: none;
+}
+
+.main_block {
+    display: block;
+    padding-top: 1.5rem;
+    background-color: var(--BGCOLOR);
+}
+
+.main_ul {
+    list-style-type: none;
+    display: flex;
+    flex-flow: column wrap;
+    gap: 1rem; 
+    padding: 0.25rem;
+    
+}
+
+.main_anchr {
+    display: block;
+    text-decoration: none;
+    color: var(--COLOR);
+    letter-spacing: 0.15em;
+    transition: all 0.5s;
+    margin: 0 0.5rem;
+    text-shadow: 2px 2px 8px var(--BORDER-COLOR);
+}
+
+.main_anchr:hover, .main_anchr:focus-visible {
+    transform: translate(10px);
+}
+
+.main_anchr:active {
+    color: var(--HEADER-COLOR);
+}
+
+.footer {
+    display: none;
+}
+
+@media screen and (min-width: 500px) {
+    body {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        padding: 0.25rem 1rem;
+        font-size: clamp(1.25rem, 3vh, 1.75rem);
+        background-color: var(--BGCOLOR);
+    }
+    
+    .header {
+        margin: none;
+    }
+
+    .header_btn {
+        display: none;
+    }
+    
+    .main {
+        background-color: var(--BGCOLOR);
+        display: flex;
+    }
+
+    .main_nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;  
+    }
+
+    .main_ul {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .footer_ul {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-evenly;
+        align-items: center;
+        list-style-type: none;
+        gap: 0.75rem;
+    }
+
+    .foot_anchr {
+        color: var(--HEADER-COLOR);
+    }
+
+    .foot_anchr:hover, .foot_anchr:focus-visible {
+        text-shadow: 2px 2px 8px var(--BORDER-COLOR);
+    }
+
+    .main_anchr {
+        text-shadow: none;
+    }
+
+    .main_anchr:hover, .main_anchr:focus-visible {
+        transform: none;
+        text-shadow: 1px -1px 3px var(--BORDER-COLOR);
+    }
+}
